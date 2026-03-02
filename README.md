@@ -17,8 +17,6 @@ The repo installs these Python packages:
 
 ## Install from GitHub
 
-Once this repository is pushed to a public GitHub repo, you can install it directly with pip.
-
 ```bash
 pip install git+https://github.com/<your-username>/<your-repo>.git
 ```

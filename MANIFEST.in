@@ -1,0 +1,10 @@
+include README.md
+include environment.yml
+include launch_georad.ipynb
+recursive-include examples *.ipynb
+recursive-include workbooks/notebooks *.ipynb
+prune build
+
+global-exclude __pycache__
+global-exclude *.pyc
+global-exclude *.pyo

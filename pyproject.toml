@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "georad"
+dynamic = ["version"]
+description = "GeoRAD air-quality and Earth-observation widgets for Colab"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "ipython",
+  "ipywidgets",
+  "numpy",
+  "pandas",
+  "matplotlib",
+  "seaborn",
+  "openaq",
+  "nbformat",
+  "nbconvert",
+]
+
+[project.optional-dependencies]
+merra = [
+  "pydap",
+  "netCDF4",
+  "python-dateutil",
+  "windrose",
+]
+gibs = [
+  "cartopy",
+]
+web = [
+  "jupyterlab",
+  "voila",
+]
+full = [
+  "pydap",
+  "netCDF4",
+  "python-dateutil",
+  "windrose",
+  "cartopy",
+  "jupyterlab",
+  "voila",
+]
+
+[project.scripts]
+georad = "georad.__main__:main"
+georad-diagnostics = "georad.diagnostics:main"
+
+[tool.setuptools.dynamic]
+version = {attr = "georad.__version__"}
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = [
+  "georad",
+  "gibstools",
+  "nmtools",
+  "oaqtools",
+  "openaqgui",
+  "panelobj",
+  "radboard",
+  "workbooks",
+]
+
+[tool.setuptools.package-data]
+workbooks = ["notebooks/*.ipynb"]

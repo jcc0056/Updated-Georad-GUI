@@ -1,0 +1,21 @@
+name: georad
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10
+  - pip
+  - jupyterlab
+  - ipywidgets
+  - ipython
+  - nbconvert
+  - numpy
+  - pandas
+  - matplotlib
+  - seaborn
+  - pydap
+  - netcdf4
+  - python-dateutil
+  - cartopy
+  - windrose
+  - pip:
+      - openaq
